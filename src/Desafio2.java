@@ -20,8 +20,10 @@ public class Desafio2 {
     }*/
 
     public static void somaNumerosPares(){
+        //int somaNumeros = numeros.stream().filter(n -> n % 2 == 0).
+        //        mapToInt(n -> n).sum();
         int somaNumeros = numeros.stream().filter(n -> n % 2 == 0).
-                mapToInt(n -> n).sum();
+                mapToInt(Integer::intValue).sum();
 
         System.out.println(somaNumeros);
     }

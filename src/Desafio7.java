@@ -6,9 +6,13 @@ public class Desafio7 {
     public static List<Integer> numeros = ListaDeNumeros.NUMEROS;
 
     public static void encontrarSegundoNumeroMaior(){
-        int maiorNumero = numeros.stream().max(Integer::compare).orElse(0);
+        //int maiorNumero = numeros.stream().max(Integer::compare).orElse(0);
 
-        int segundoMaiorNumero = numeros.stream().filter(n -> n < maiorNumero).max(Integer::compare).orElse(0);
+        //int segundoMaiorNumero = numeros.stream().filter(n -> n < maiorNumero).max(Integer::compare).orElse(0);
+
+        int maiorNumero = numeros.stream().mapToInt(n -> n).max().orElse(0);
+
+        int segundoMaiorNumero = numeros.stream().filter(n -> n < maiorNumero).mapToInt(Integer::intValue).max().orElse(0);
 
         System.out.printf("O segundo maior número é %s", segundoMaiorNumero);
         System.out.println();

@@ -24,7 +24,8 @@ public class Desafio1 {
     }*/
 
     public static void numerosAsc(){
-        numeros.stream().sorted(Integer::compare).forEach(System.out::println);
+        //numeros.stream().sorted(Integer::compare).forEach(System.out::println);
+        numeros.stream().sorted(Comparator.naturalOrder()).forEach(System.out::println);
     }
 
     public static void main(String[] args) {
